@@ -80,10 +80,10 @@ class Game {
     if(this.bullets.length < 1) return;
     for(let i = this.bullets.length-1; i >= 0; i--){
 
-       if( this.bullets[i].loc.vx < 0 ||
-           this.bullets[i].loc.vx > this.cnv.width ||
-           this.bullets[i].loc.vy < 0 ||
-           this.bullets[i].loc.vy > this.cnv.height ){
+       if( this.bullets[i].loc.x < 0 ||
+           this.bullets[i].loc.x > this.cnv.width ||
+           this.bullets[i].loc.y < 0 ||
+           this.bullets[i].loc.y > this.cnv.height ){
              this.bullets.splice(i, 1);
            }
 
@@ -228,8 +228,8 @@ class Game {
     if(!towerGame.towers[towerGame.towers.length-1].placed &&
       towerGame.placingTower === true ){
         //follow mouse
-        towerGame.towers[towerGame.towers.length-1].loc.vx = this.mouseX;
-        towerGame.towers[towerGame.towers.length-1].loc.vy = this.mouseY;
+        towerGame.towers[towerGame.towers.length-1].loc.x = this.mouseX;
+        towerGame.towers[towerGame.towers.length-1].loc.y = this.mouseY;
 //        console.log(this.mouseX + ", " + this.mouseY + ", " + towerGame.towers[towerGame.towers.length-1].loc.toString());
       }
   }
